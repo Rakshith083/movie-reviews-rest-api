@@ -11,16 +11,15 @@ app.use(bodyParser.urlencoded({ extended: false }));
 // parse application/json
 app.use(bodyParser.json());
 var fs = require('fs');
-logger.debug("Creating folder for logs")
 fs.mkdir('logs',()=>{});
 app.use('/api/users', userRoutes)
 
 process.on('unhandledRejection', (err, promise) => {
-    console.log(err)
+    logger.error(err);
 })
 
 process.on('uncaughtException', (err, promise) => {
-    console.log(err)
+    logger.error(err);
 })
 
 app.listen(server_port, async () => {
