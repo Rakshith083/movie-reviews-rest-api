@@ -5,8 +5,6 @@ const { logger } = require('../lib/logger');
 
 const addUser = async (request, response, next) => {
     try {
-        var salt = bcrypt.genSaltSync(10);
-        request.body.password = bcrypt.hashSync(request.body.password, salt);
         const user = await UserModel.create(request.body);
         const token = getSignedToken(user);
         logger.info(user.username, "onboarded successfully");

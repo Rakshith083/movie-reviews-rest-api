@@ -1,0 +1,75 @@
+[
+    {
+        "comment": "Good Action Movie",
+        "rating":8.7,
+        "movieId":"b0e71bbe-ceca-4048-93f3-4cda7960aa51"
+    },
+    {
+        "comment": "The best Action movie of the year",
+        "rating":8,
+        "movieId":"b0e71bbe-ceca-4048-93f3-4cda7960aa51"
+    },
+    {
+        "comment": "Good emotional mother sentiment",
+        "rating":7,
+        "movieId":"b0e71bbe-ceca-4048-93f3-4cda7960aa51"
+    },
+    {
+        "comment": "A big bomb from sandlewood",
+        "rating":6.5,
+        "movieId":"b0e71bbe-ceca-4048-93f3-4cda7960aa51"
+    },
+    {
+        "comment": "Waited for this",
+        "rating":8.1,
+        "movieId":"b0e71bbe-ceca-4048-93f3-4cda7960aa52"
+    },
+    {
+        "comment": "A Big comeback for Rocky",
+        "rating":8,
+        "movieId":"b0e71bbe-ceca-4048-93f3-4cda7960aa52"
+    },
+    {
+        "rating":7,
+        "movieId":"b0e71bbe-ceca-4048-93f3-4cda7960aa52"
+    },
+    {
+        "comment": "Good Family Movie",
+        "rating":6,
+        "movieId":"b0e71bbe-ceca-4048-93f3-4cda7960aa53"
+    },
+    {
+        "comment": "Felt the devine",
+        "rating":7.5,
+        "movieId":"b0e71bbe-ceca-4048-93f3-4cda7960aa53"
+    },
+    {
+        "rating":8,
+        "movieId":"b0e71bbe-ceca-4048-93f3-4cda7960aa53"
+    },
+    {
+        "comment": "Love for Charlie",
+        "rating":8,
+        "movieId":"b0e71bbe-ceca-4048-93f3-4cda7960aa54"
+    },
+    {
+        "comment": "Dog lovers must watch",
+        "rating":6,
+        "movieId":"b0e71bbe-ceca-4048-93f3-4cda7960aa54"
+    },
+    {
+        "comment": "Best of Rakshith Shetty",
+        "rating":7,
+        "movieId":"b0e71bbe-ceca-4048-93f3-4cda7960aa54"
+    },
+    {
+        "comment": "Definitelty make you cry",
+        "rating":10,
+        "movieId":"b0e71bbe-ceca-4048-93f3-4cda7960aa54"
+    },
+    {
+        "comment": "Charlie",
+        "rating":8.7,
+        "movieId":"b0e71bbe-ceca-4048-93f3-4cda7960aa54"
+    }
+]

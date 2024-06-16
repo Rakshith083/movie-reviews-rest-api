@@ -1,6 +1,14 @@
 const { DataTypes } = require('sequelize');
-const { sequelize } = require('../config/database')
+const { sequelize } = require('../config/database');
+var bcrypt = require('bcryptjs');
 const UserModel = sequelize.define('users', {
+    id: {
+        type: DataTypes.UUID,
+        defaultValue: DataTypes.UUIDV4,
+        unique: true,
+        primaryKey: true,
+        allowNull: false
+    },
     name: {
         type: DataTypes.STRING,
         allowNull: false,
@@ -40,10 +48,15 @@ const UserModel = sequelize.define('users', {
             notNull: {
                 msg: "please provide password"
             }
+        },
+        set(value) {
+            var salt = bcrypt.genSaltSync(10);
+            value = bcrypt.hashSync(request.body.password, salt);
+            this.setDataValue('password', value);
         }
     },
-    lastLogin:{
-        type:DataTypes.DATE
+    lastLogin: {
+        type: DataTypes.DATE
     }
 });
 module.exports = { UserModel }

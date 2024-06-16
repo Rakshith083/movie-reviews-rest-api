@@ -3,8 +3,6 @@ const { addUser, getAllUSers, getUser, deleteUser, updateUser, getUserCounts, lo
 const { authorize } = require('../middlewares/auth');
 var router = express.Router()
 
-router.post("/signup", addUser);
-router.post("/login", login);
 router.get("/getAllUsers", getAllUSers);
 router.get("/getUser/:userId", getUser);
 router.delete("/deleteUser/:userId", deleteUser);
