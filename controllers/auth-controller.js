@@ -1,7 +1,8 @@
 var passport = require('passport');
 var OpenIDConnectStrategy = require('passport-openidconnect');
 var { oidc } = require('../lib/oidc');
-
+const { AuthToken } = require('../models/auth-token');
+const { logger } = require('../lib/logger');
 passport.use(new OpenIDConnectStrategy({
     issuer: oidc.issuer,
     authorizationURL: oidc.authorizationURL,
@@ -13,6 +14,7 @@ passport.use(new OpenIDConnectStrategy({
     scope: ['profile']
 }, function verify(issuer, profile, refreshToken, accessToken, cb) {
     profile = getOidcProfile(profile);
+
     return cb(null, profile);
 }));
 
@@ -42,4 +44,20 @@ const failureResponse = (req, res) => {
     res.status(500).send({ "error": "Login Failed!" })
 }
 
-module.exports = { passport, failureResponse };
+async function getSignedToken(user) {
+    const jwt = require('jsonwebtoken');
+    try {
+        const jwtSecret = process.env.JWT_SECRET;
+        const ttl = process.env.SESSION_TIMEOUT;
+        const exp = new Date((new Date).getTime() + (ttl * 1000));
+        const token = jwt.sign({ username: user.username }, jwtSecret, { expiresIn: Number(process.env.SESSION_TIMEOUT) });
+
+        const authToken = await AuthToken.create({ token, userId: user.id, ttl, expiresAt: exp });
+        return authToken.token
+    }
+    catch (e) {
+        logger.error(e)
+    }
+}
+
+module.exports = { passport, failureResponse, getSignedToken };

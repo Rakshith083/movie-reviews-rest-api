@@ -11,14 +11,13 @@ const { logger } = require('./lib/logger');
 UPDATE_DATABASE = process.env.UPDATE_DATABASE == "true";
 const server_port = process.env.SERVER_PORT || 3000;
 var app = express();
-
 app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(session({
     secret: process.env.JWT_SECRET,
-    resave: false, 
+    resave: false,
     saveUninitialized: false
 }));
 
@@ -31,15 +30,15 @@ fs.mkdir('logs', () => { });
 app.use('/api/users', userRoutes);
 app.use('/api/auth', authToutes);
 app.use('/api/movies', movieRoutes);
-app.use('/api/reviews', reviewRoutes)
+app.use('/api/reviews', reviewRoutes);
 
 process.on('unhandledRejection', (err, promise) => {
     logger.error(err);
-})
+});
 
 process.on('uncaughtException', (err, promise) => {
     logger.error(err);
-})
+});
 
 app.listen(server_port, async () => {
     logger.info("Server is listening at port", server_port)

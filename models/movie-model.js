@@ -46,4 +46,4 @@ const MovieModel = sequelize.define('movies', {
     },
     storyline: DataTypes.STRING,
 });
-module.exports = { MovieModel }
+module.exports = { MovieModel };

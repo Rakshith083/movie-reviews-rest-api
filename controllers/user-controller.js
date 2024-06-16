@@ -1,12 +1,12 @@
 const { UserModel } = require('../models/user-model');
 var bcrypt = require('bcryptjs');
-const { getSignedToken } = require('../lib/utils');
+const { getSignedToken } = require('./auth-controller');
 const { logger } = require('../lib/logger');
 
 const addUser = async (request, response, next) => {
     try {
         const user = await UserModel.create(request.body);
-        const token = getSignedToken(user);
+        const token = await getSignedToken(user);
         logger.info(user.username, "onboarded successfully");
         response.send({ token }).status(201);
     }
@@ -87,8 +87,8 @@ const login = async (request, response) => {
         logger.error(error);
         response.send({ error: "Invalid credentials" }).status(422);
     }
-    const token = getSignedToken(user);
-    user.update({lastLogin:(new Date)})
+    const token = await getSignedToken(user);
+    user.update({ lastLogin: (new Date) })
     response.send({ token }).status(201);
 }
 
