@@ -20,8 +20,8 @@ const ReviewsModel = sequelize.define('reviews', {
         type: DataTypes.FLOAT,
         allowNull: false,
         validate: {
-            max: 1,
-            min: 10,
+            min: 1,
+            max: 10,
         }
     },
     likes: DataTypes.INTEGER
