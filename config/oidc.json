@@ -1,0 +1,8 @@
+{
+    "issuer": "",
+    "authorizationURL": "",
+    "tokenURL": "",
+    "userInfoURL": "",
+    "logoutURL": "",
+    "jwksURL": ""
+}
