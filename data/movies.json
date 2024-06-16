@@ -1,0 +1,38 @@
+[
+    {
+        "id":"b0e71bbe-ceca-4048-93f3-4cda7960aa51",
+        "name": "KGF Chapter 1",
+        "releaseDate": "2018-12-18",
+        "language": "Kannada",
+        "duration": 150,
+        "genre": "Action",
+        "storyline": "In the 1970s, a gangster named Rocky goes undercover as a slave to assassinate the owner of a notorious gold mine known as the Kolar Gold Fields."
+    },
+    {
+        "id":"b0e71bbe-ceca-4048-93f3-4cda7960aa52",
+        "name": "KGF Chapter 2",
+        "releaseDate": "2018-04-18",
+        "language": "Kannada",
+        "duration": 180,
+        "genre": "Action",
+        "storyline": "In the blood-soaked Kolar Gold Fields, Rocky's name strikes fear into his foes, while the government sees him as a threat to law and order. Rocky must battle threats from all sides for unchallenged supremacy."
+    },
+    {
+        "id":"b0e71bbe-ceca-4048-93f3-4cda7960aa53",
+        "name": "Kantara",
+        "releaseDate": "2023-05-20",
+        "language": "Kannada",
+        "duration": 189,
+        "genre": "Fantasy",
+        "storyline": "When greed paves the way for betrayal, scheming and murder, a young tribal reluctantly dons the traditions of his ancestors to seek justice"
+    },
+    {
+        "id":"b0e71bbe-ceca-4048-93f3-4cda7960aa54",
+        "name": "777 Charlie",
+        "releaseDate": "2022-05-20",
+        "language": "Kannada",
+        "duration": 169,
+        "genre": "Adventure",
+        "storyline": "Dharma is stuck in a rut with his negative and lonely lifestyle and spends each day in the comfort of his loneliness. A pup named Charlie enters his life and gives him a new perspective towards it"
+    }
+]
