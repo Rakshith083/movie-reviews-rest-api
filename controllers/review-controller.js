@@ -31,7 +31,8 @@ const getUserReviews = async (req, res) => {
         var reviews = await ReviewsModel.findAll({
             where: { userId: req.user.id }, include: [
                 { model: MovieModel, attributes: ['id', 'name', 'releaseDate'] },
-            ]
+            ],
+            order: [['updatedAt', "DESC"]]
         });
         res.status(200).send(reviews);
     } catch (e) {
@@ -59,10 +60,22 @@ const deleteReview = (req, res) => {
         });
     } catch (e) {
         logger.error(e);
+        res.status(500).send(e);
+    }
+}
+
+const likeReview = (req, res) => {
+    try {
+        ReviewsModel.findByPk(req.params.id).then(async (review) => {
+            await review.increment('likes', { by: 1 });
+            res.send('ok')
+        });
+    } catch (e) {
+        logger.error(e);
         res.status(500).send(e)
     }
 
 }
 
-module.exports = { postReview, getUserReviews, editReview, deleteReview };
+module.exports = { postReview, getUserReviews, editReview, deleteReview, likeReview };
 

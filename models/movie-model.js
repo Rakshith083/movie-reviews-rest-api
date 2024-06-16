@@ -33,8 +33,8 @@ const MovieModel = sequelize.define('movies', {
         type: DataTypes.INTEGER,
         allowNull: false,
         validate: {
-            max: 30,
-            min: 240
+            max: 240,
+            min: 30
         }
     },
     genre: {

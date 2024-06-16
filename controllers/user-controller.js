@@ -70,12 +70,6 @@ const updateUser = async function (req, res) {
     }
 }
 
-const getUserCounts = async function (req, res) {
-    res.send({
-        count: await UserModel.count()
-    })
-}
-
 const login = async (request, response) => {
     if (!(request.body.username || request.body.password)) {
         const error = new Error("username and password required");
@@ -98,4 +92,4 @@ const login = async (request, response) => {
     response.send({ token }).status(201);
 }
 
-module.exports = { addUser, getAllUSers, getUser, deleteUser, updateUser, getUserCounts, login }
+module.exports = { addUser, getAllUSers, getUser, deleteUser, updateUser, login }

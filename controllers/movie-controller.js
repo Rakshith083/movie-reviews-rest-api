@@ -18,8 +18,12 @@ const getAllMovies = async function (request, response) {
         );
         movies.forEach(movie => {
             const ratingArray = movie.reviews.map(item => item.rating);
-            movie.dataValues.averageRating = (ratingArray.reduce((a, b) => a + b) / ratingArray.length).toFixed(2);
-            movie.dataValues.reviews = ratingArray.length;
+            movie.dataValues.averageRating = 0;
+            movie.dataValues.reviews = 0;
+            if (ratingArray.length) {
+                movie.dataValues.averageRating = (ratingArray.reduce((a, b) => a + b) / ratingArray.length).toFixed(2);
+                movie.dataValues.reviews = ratingArray.length;
+            }
         });
         response.status(201).send(movies);
     } catch (err) {
@@ -41,7 +45,7 @@ const getMovie = async (req, res) => {
                 {
                     model: ReviewsModel,
                     as: 'reviews',
-                    attributes: ['rating', 'comment', 'updatedAt', 'likes'],
+                    attributes: ['id', 'rating', 'comment', 'updatedAt', 'likes'],
                     include: [{ model: UserModel, attributes: ['name', 'username'] }]
 
                 },
@@ -55,4 +59,44 @@ const getMovie = async (req, res) => {
     }
 }
 
-module.exports = { getAllMovies, getMovie }
+const deleteMovie = (req, res) => {
+    try {
+        MovieModel.findByPk(req.params.id).then((movie) => {
+            movie.destroy();
+            res.status(404).send("movie deleted")
+        });
+    }
+    catch (e) {
+        logger.error(e);
+        res.status(500).send(e)
+    }
+}
+
+const postMovie = (req, res) => {
+    try {
+        MovieModel.create(req.body).then((movie) => {
+            res.status(201).send(movie)
+        });
+    }
+    catch (e) {
+        logger.error(e);
+        res.status(500).send(e)
+    }
+}
+
+
+const updateMovie = (req, res) => {
+    try {
+        MovieModel.findByPk(req.params.id).then(async (movie) => {
+            await movie.update(req.body);
+            res.send(movie)
+        });
+    }
+    catch (e) {
+        logger.error(e);
+        res.status(500).send(e)
+    }
+}
+
+
+module.exports = { getAllMovies, getMovie, deleteMovie, updateMovie, postMovie }
