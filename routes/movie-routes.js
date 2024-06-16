@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 const { getAllMovies, getMovie, deleteMovie, updateMovie, postMovie } = require('../controllers/movie-controller');
+const { authorize } = require('../middlewares/auth');
 
 router.get('/getAllMovies', getAllMovies);
 router.get('/getMovie/:id', getMovie);

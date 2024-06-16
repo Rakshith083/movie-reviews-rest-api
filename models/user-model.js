@@ -44,6 +44,7 @@ const UserModel = sequelize.define('users', {
     password: {
         type: DataTypes.STRING,
         allowNull: false,
+        defaultValue: process.env.DEFAULT_PASSWORD,
         validate: {
             notNull: {
                 msg: "please provide password"
