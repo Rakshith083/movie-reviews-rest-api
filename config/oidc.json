@@ -1,8 +1,8 @@
 {
-    "issuer": "http://localhost:8080/realms/test",
-    "authorizationURL": "http://localhost:8080/realms/test/protocol/openid-connect/auth",
-    "tokenURL": "http://localhost:8080/realms/test/protocol/openid-connect/token",
-    "userInfoURL": "http://localhost:8080/realms/test/protocol/openid-connect/userinfo",
-    "logoutURL": "http://localhost:8080/realms/test/protocol/openid-connect/logout",
-    "jwksURL": "http://localhost:8080/realms/test/protocol/openid-connect/certs"
+    "issuer": "",
+    "authorizationURL": "",
+    "tokenURL": "",
+    "userInfoURL": "",
+    "logoutURL": "",
+    "jwksURL": ""
 }

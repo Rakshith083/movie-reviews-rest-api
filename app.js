@@ -21,7 +21,9 @@ app.use(session({
     saveUninitialized: false
 }));
 
-app.use(passport.authenticate('session'));
+if (process.env['APP_AUTH_TYPE'] == 'oidc') {
+    app.use(passport.authenticate('session'));
+}
 
 var fs = require('fs');
 const { dataLoad } = require('./lib/utils');

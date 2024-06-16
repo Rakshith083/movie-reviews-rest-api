@@ -2,13 +2,14 @@ const { UserModel } = require('../models/user-model');
 var bcrypt = require('bcryptjs');
 const { getSignedToken } = require('./auth-controller');
 const { logger } = require('../lib/logger');
+const { AuthToken } = require('../models/auth-token');
 
 const addUser = async (request, response, next) => {
     try {
         const user = await UserModel.create(request.body);
         const token = await getSignedToken(user);
         logger.info(user.username, "onboarded successfully");
-        response.send({ token }).status(201);
+        response.send({ user, token }).status(201);
     }
     catch (err) {
         console.log(err)
@@ -89,7 +90,17 @@ const login = async (request, response) => {
     }
     const token = await getSignedToken(user);
     user.update({ lastLogin: (new Date) })
-    response.send({ token }).status(201);
+    response.send({ user, token }).status(201);
 }
 
-module.exports = { addUser, getAllUSers, getUser, deleteUser, updateUser, login }
+const logout = async function (req, res) {
+    try {
+        AuthToken.findByPk(req.token).then(token => token.destroy());
+        res.status(401).send({ msg: "Successfully logged out" });
+    } catch (e) {
+        logger.error(e);
+        res.status(500).send(e);
+    }
+}
+
+module.exports = { addUser, getAllUSers, getUser, deleteUser, updateUser, login, logout }
