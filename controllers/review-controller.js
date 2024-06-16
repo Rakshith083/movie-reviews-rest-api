@@ -2,6 +2,7 @@ const { Op } = require('sequelize');
 const { ReviewsModel } = require('../models/reviews-model');
 const { MovieModel } = require('../models/movie-model');
 const { logger } = require('../lib/logger');
+
 const postReview = (req, res) => {
     try {
         if (!req.params.movieId) {
@@ -64,3 +65,4 @@ const deleteReview = (req, res) => {
 }
 
 module.exports = { postReview, getUserReviews, editReview, deleteReview };
+

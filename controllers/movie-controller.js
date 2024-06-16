@@ -43,6 +43,7 @@ const getMovie = async (req, res) => {
                     as: 'reviews',
                     attributes: ['rating', 'comment', 'updatedAt', 'likes'],
                     include: [{ model: UserModel, attributes: ['name', 'username'] }]
+
                 },
             ]
         });

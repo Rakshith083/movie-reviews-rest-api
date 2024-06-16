@@ -7,4 +7,6 @@ router.post('/postReview/:movieId', authorize, postReview);
 router.get('/getUserReviews', authorize, getUserReviews);
 router.patch('/editReview/:id', authorize, editReview);
 router.delete('/deleteReview/:id', authorize, deleteReview);
+
+
 module.exports = { reviewRoutes: router }
