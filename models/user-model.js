@@ -51,7 +51,7 @@ const UserModel = sequelize.define('users', {
         },
         set(value) {
             var salt = bcrypt.genSaltSync(10);
-            value = bcrypt.hashSync(request.body.password, salt);
+            value = bcrypt.hashSync(value, salt);
             this.setDataValue('password', value);
         }
     },
