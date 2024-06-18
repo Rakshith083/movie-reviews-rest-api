@@ -23,7 +23,7 @@ passport.use(new OpenIDConnectStrategy({
         if (err)
             return cb(err);
 
-        var user = await UserModel.findByPk(profile.id);
+        var user = await UserModel.findOne({ where: { email: profile.email } });
         if (!user) {
             user = await UserModel.create(profile);
         }
