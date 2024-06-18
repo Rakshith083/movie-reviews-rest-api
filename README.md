@@ -13,7 +13,7 @@ Supported authentication strategies : JWT (local), OpenId-Connect(oidc).
 
 Provde the JWT_SECRET in env.bat file.
 
-To configure OpenId-Connect authenntication,
+# Configuring OpenId-Connect authenntication,
     1. Provde the CLIENT_ID and CLIENT_SECRET in env.bat file.
     2. Set APP_AUTH_TYPE to oidc in env.bat file.
     3. Provide sme default encryted password for DEFAULT_PASSWORD in env.bat file.
