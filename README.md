@@ -29,6 +29,13 @@ Provde the JWT_SECRET in env.bat file.
     $ env.bat
     $ node .
 
+# End points
+    Postman collection of this application is attached in this repo (movie-review.postman_collection.json).
+    It can be imported to postman application.
+    Under the Environments tab, you can create a new environment variables with name "URL" with value "localhost:3000/api"
+        Or 
+    you can replace {{URL}} with "localhost:3000/api" for all the end points.
+
 Note: For linux machines, You should export all the variables from the env.bat file.
 
 # Features
