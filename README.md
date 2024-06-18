@@ -1,7 +1,7 @@
 # movie-reviews-rest-api
 This rest-api application built on express and using sequelize as ORM.
 
-#Project description
+# Project description
 This is a movie-review application where users can see the ratings and reviews for movies and also users can post their reviews for any movies.
 When application is starting, Some sample data will be added to the db.(only mysql and postgresql supported.If you want to connect to any other db, It is recommended to visit the sequilize official site and add the required npm packages).
 
