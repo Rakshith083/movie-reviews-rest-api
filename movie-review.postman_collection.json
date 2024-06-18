@@ -1,0 +1,510 @@
+{
+	"info": {
+		"_postman_id": "034fb29c-a1a2-4eb4-a1ea-f8e3fa8b192a",
+		"name": "movie-review",
+		"description": "# 🚀 Get started here\n\nThis template guides you through CRUD operations (GET, POST, PUT, DELETE), variables, and tests.\n\n## 🔖 **How to use this template**\n\n#### **Step 1: Send requests**\n\nRESTful APIs allow you to perform CRUD operations using the POST, GET, PUT, and DELETE HTTP methods.\n\nThis collection contains each of these [request](https://learning.postman.com/docs/sending-requests/requests/) types. Open each request and click \"Send\" to see what happens.\n\n#### **Step 2: View responses**\n\nObserve the response tab for status code (200 OK), response time, and size.\n\n#### **Step 3: Send new Body data**\n\nUpdate or add new data in \"Body\" in the POST request. Typically, Body data is also used in PUT request.\n\n```\n{\n    \"name\": \"Add your name in the body\"\n}\n\n ```\n\n#### **Step 4: Update the variable**\n\nVariables enable you to store and reuse values in Postman. We have created a [variable](https://learning.postman.com/docs/sending-requests/variables/) called `base_url` with the sample request [https://postman-api-learner.glitch.me](https://postman-api-learner.glitch.me). Replace it with your API endpoint to customize this collection.\n\n#### **Step 5: Add tests in the \"Scripts\" tab**\n\nAdding tests to your requests can help you confirm that your API is working as expected. You can write test scripts in JavaScript and view the output in the \"Test Results\" tab.\n\n<img src=\"https://content.pstmn.io/fa30ea0a-373d-4545-a668-e7b283cca343/aW1hZ2UucG5n\" alt=\"\" height=\"1530\" width=\"2162\">\n\n## 💪 Pro tips\n\n- Use folders to group related requests and organize the collection.\n    \n- Add more [scripts](https://learning.postman.com/docs/writing-scripts/intro-to-scripts/) to verify if the API works as expected and execute workflows.\n    \n\n## 💡Related templates\n\n[API testing basics](https://go.postman.co/redirect/workspace?type=personal&collectionTemplateId=e9a37a28-055b-49cd-8c7e-97494a21eb54&sourceTemplateId=ddb19591-3097-41cf-82af-c84273e56719)  \n[API documentation](https://go.postman.co/redirect/workspace?type=personal&collectionTemplateId=e9c28f47-1253-44af-a2f3-20dce4da1f18&sourceTemplateId=ddb19591-3097-41cf-82af-c84273e56719)  \n[Authorization methods](https://go.postman.co/redirect/workspace?type=personal&collectionTemplateId=31a9a6ed-4cdf-4ced-984c-d12c9aec1c27&sourceTemplateId=ddb19591-3097-41cf-82af-c84273e56719)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "36329471"
+	},
+	"item": [
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "getAllUsers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/users/getAllUsers",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"users",
+								"getAllUsers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getUser",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/users/getUser/15",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"users",
+								"getUser",
+								"15"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete User",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/users/deleteUser/23",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"users",
+								"deleteUser",
+								"23"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateUser",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Nithya M\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/users/updateUser/20",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"users",
+								"updateUser",
+								"20"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "signup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Rakshith\",\r\n    \"email\": \"rakshith@gmail.com\",\r\n    \"username\": \"rakshith\",\r\n    \"password\": \"4JN17cs067\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/auth/signup",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"rakshith\",\r\n    \"password\": \"4JN17cs067\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/auth/login",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logout",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InN1cHJpeWEubWFuZWdhciIsInVzZXJJZCI6IjQ2YzE5ZjgxLTdiNTAtNGM3Yy1hYzA5LWE2MWE2ZGVlYmVkMSIsImlhdCI6MTcxODU3MDgwOCwiZXhwIjoxNzE4NTcyNjA4fQ.y1tkDnj4UKw2kKfRV6Y6-BGUbwkq5GwVtOj43pfD-dI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/auth/logout",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"auth",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "movies",
+			"item": [
+				{
+					"name": "getAllMovies",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InN1cHJpeWEubWFuZWdhciIsInVzZXJJZCI6IjQ2YzE5ZjgxLTdiNTAtNGM3Yy1hYzA5LWE2MWE2ZGVlYmVkMSIsImlhdCI6MTcxODU3MDgwOCwiZXhwIjoxNzE4NTcyNjA4fQ.y1tkDnj4UKw2kKfRV6Y6-BGUbwkq5GwVtOj43pfD-dI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/movies/getAllMovies",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"movies",
+								"getAllMovies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getMovie",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/movies/getMovie/b0e71bbe-ceca-4048-93f3-4cda7960aa53",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"movies",
+								"getMovie",
+								"b0e71bbe-ceca-4048-93f3-4cda7960aa53"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "postMovie",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Kantara\",\r\n    \"releaseDate\": \"2023-05-20\",\r\n    \"language\": \"Kannada\",\r\n    \"duration\": 189,\r\n    \"genre\": \"Fantasy\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/movies/postMovie",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"movies",
+								"postMovie"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateMovie",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Kantara\",\r\n    \"releaseDate\": \"2023-05-20\",\r\n    \"language\": \"Hindi\",\r\n    \"duration\": 189,\r\n    \"genre\": \"Fantasy\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/movies/updateMovie/984fd5bf-f595-4638-9f13-ce93f3f7b294",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"movies",
+								"updateMovie",
+								"984fd5bf-f595-4638-9f13-ce93f3f7b294"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteMovie",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/movies/deleteMovie/984fd5bf-f595-4638-9f13-ce93f3f7b294",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"movies",
+								"deleteMovie",
+								"984fd5bf-f595-4638-9f13-ce93f3f7b294"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "reviews",
+			"item": [
+				{
+					"name": "getUserReviews",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InN1cHJpeWEubWFuZWdhciIsImlhdCI6MTcxODU0MDYwOSwiZXhwIjoxNzE4NTQyNDA5fQ.No3f8zOoJKX6SxPDhWIhzu0fWHreuWZ24iy4IA80ghk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/reviews/getUserReviews",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"reviews",
+								"getUserReviews"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "postReview",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InN1cHJpeWEubWFuZWdhciIsImlhdCI6MTcxODUzNTY5OCwiZXhwIjoxNzE4NTM3NDk4fQ.9PNp3NnI28ff9bajN9oBslOIs0o6sH4HS63KYCfsbPY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"rating\": 8,\r\n    \"comment\": \"Hatsoff to Rishab\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/reviews/postReview/b0e71bbe-ceca-4048-93f3-4cda7960aa53",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"reviews",
+								"postReview",
+								"b0e71bbe-ceca-4048-93f3-4cda7960aa53"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "editReview",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InN1cHJpeWEubWFuZWdhciIsImlhdCI6MTcxODUzOTE0MywiZXhwIjoxNzE4NTQwOTQzfQ.SDCfsDQJmY8-uvisnKnlqGq7K1vqDKXFv6EFxBCNrk8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"comment\": \"Not Good\",\r\n    \"rating\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/reviews/editReview/43e82d92-ad90-42c9-a6ca-62934dce93d6",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"reviews",
+								"editReview",
+								"43e82d92-ad90-42c9-a6ca-62934dce93d6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteReview",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InN1cHJpeWEubWFuZWdhciIsImlhdCI6MTcxODUzOTU1NSwiZXhwIjoxNzE4NTQxMzU1fQ.MfWUaGHL6AvEM1Pgky-kR_4eokSFn6zDkpfPQQagLhs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/reviews/deleteReview/43e82d92-ad90-42c9-a6ca-62934dce93d6",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"reviews",
+								"deleteReview",
+								"43e82d92-ad90-42c9-a6ca-62934dce93d6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "likeReview",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InN1cHJpeWEubWFuZWdhciIsImlhdCI6MTcxODU0MDM5MiwiZXhwIjoxNzE4NTQyMTkyfQ.y3l4PAyPKKH23PRq8WatXsGSqlBqJacrp0--T--qvfg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/reviews/likeReview/93de9684-2456-4e9f-bcdb-ce28ae568585",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"reviews",
+								"likeReview",
+								"93de9684-2456-4e9f-bcdb-ce28ae568585"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "id",
+			"value": "1"
+		},
+		{
+			"key": "base_url",
+			"value": "https://postman-rest-api-learner.glitch.me/"
+		}
+	]
+}
